@@ -27,8 +27,11 @@ if __name__ == "__main__":
 
     for image in all_images:
 
-        print(f"image_name:{image}")
+        print(f"File_name:{image}")
 
-        data = BarcodeReader(f'static/{image}')
+        try:
+            data = BarcodeReader(f'static/{image}')
+        except:
+            data = "Not an Image"
 
         print(f'data: {data}\n')
